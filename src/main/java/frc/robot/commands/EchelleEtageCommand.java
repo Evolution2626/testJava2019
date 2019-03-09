@@ -10,7 +10,7 @@ public class EchelleEtageCommand extends Command {
 
     public EchelleEtageCommand(int etageToAdd){
         requires(Robot.echelle);
-        Robot.echelle.etage = (int) Range.coerce(0, Robot.echelle.etages.length, (Robot.echelle.etage + etageToAdd));
+        Robot.echelle.etage = (int) Range.coerce(0, Robot.echelle.etages.length - 1, (Robot.echelle.etage + etageToAdd));
     }
 
     @Override
