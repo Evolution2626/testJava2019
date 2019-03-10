@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class EchelleLockCommand extends Command {
   public EchelleLockCommand() {
@@ -21,7 +22,7 @@ public class EchelleLockCommand extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return !Robot.oi.gamepadCoDriver.getRawButton(RobotMap.BOUTON_LOCK_ECHELLE); //arrête la commande quand on lache le bouton
   }
 
   // Called once after isFinished returns true
