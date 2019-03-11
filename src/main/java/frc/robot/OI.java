@@ -1,6 +1,7 @@
 package frc.robot;
 
 import frc.robot.RobotMap.GOBEUR_ACTIONS;
+import frc.robot.commands.DrivetrainResetGyroCommand;
 import frc.robot.commands.EchelleDeplacerEncodeur;
 import frc.robot.commands.EchelleEtageCommand;
 import frc.robot.commands.EchelleLockCommand;
@@ -24,7 +25,9 @@ public class OI {
 
         gamepadCoDriver.getBtn(RobotMap.BOUTON_MONTER_ECHELLE_UN_PEU).whenPressed(new EchelleDeplacerEncodeur(3000));
 
-        gamepadCoDriver.getBtn(RobotMap.BOUTON_LOCK_ECHELLE).whenPressed(new EchelleLockCommand());;
+        gamepadCoDriver.getBtn(RobotMap.BOUTON_LOCK_ECHELLE).whenPressed(new EchelleLockCommand());
+
+        gamepadDriver.getBtn(RobotMap.BOUTON_RESET_GYRO).whenPressed(new DrivetrainResetGyroCommand());
     }
 
 

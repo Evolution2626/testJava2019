@@ -33,6 +33,8 @@ public class RobotMap{
     public static final int BOUTON_MONTER_ECHELLE_UN_PEU = 0;
     public static final int BOUTON_LOCK_ECHELLE = 0;
 
+    public static final int BOUTON_RESET_GYRO = 0;
+
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;
 

@@ -33,11 +33,19 @@ public final class Drivetrain extends Subsystem {
 
     public void mecDrive(double axeX, double axeY, double axeZ, boolean useGyro){
         if (useGyro) {
-            mecanumDrive.driveCartesian(axeY, axeX, axeZ, gyro.getAngle());
+            mecanumDrive.driveCartesian(axeY, axeX, axeZ, getGyroAngle());
         }else{
             mecanumDrive.driveCartesian(axeY, axeX, axeZ);
         }
         
+    }
+
+    public double getGyroAngle(){
+        return gyro.getAngle();
+    }
+
+    public void resetGyroAngle(){
+        gyro.reset();
     }
 
     @Override
