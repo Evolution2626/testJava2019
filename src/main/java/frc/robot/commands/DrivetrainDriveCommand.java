@@ -3,6 +3,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.util.Range;
 
 public class DrivetrainDriveCommand extends Command{
 
@@ -16,7 +17,7 @@ public class DrivetrainDriveCommand extends Command{
         double axeY = Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_GAUCHE_Y);
         double axeZ = Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_DROITE_X);
 
-        Robot.drivetrain.mecDrive(axeX, axeY, axeZ, true);
+        Robot.drivetrain.mecDrive(Range.threshold(0.1, axeX), Range.threshold(0.1, axeY), Range.threshold(0.1, axeZ), true);
     }
 
     @Override
