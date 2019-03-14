@@ -2,7 +2,9 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.GOBEUR_ACTIONS;
@@ -10,20 +12,20 @@ import frc.robot.RobotMap.GOBEUR_ACTIONS;
 
 public final class Gobeur extends Subsystem {
 
-    public TalonSRX gobeurDroite;
-    public TalonSRX gobeurGauche;
+    public VictorSP gobeurDroite;
+    public VictorSP gobeurGauche;
 
     public Gobeur(){
-        gobeurGauche = new TalonSRX(RobotMap.MOTEUR_GOBEUR_GAUCHE);
-        gobeurDroite = new TalonSRX(RobotMap.MOTEUR_GOBEUR_DROITE);
+        gobeurGauche = new VictorSP(RobotMap.MOTEUR_GOBEUR_GAUCHE);
+        gobeurDroite = new VictorSP(RobotMap.MOTEUR_GOBEUR_DROITE);
 
         gobeurDroite.setInverted(true);
 
-        gobeurDroite.follow(gobeurGauche);
     }
 
     public void setMoteurs(double vitesse){
-        gobeurGauche.set(ControlMode.PercentOutput, vitesse);
+        gobeurGauche.set(vitesse);
+        gobeurDroite.set(vitesse);
     }
 
     public void setAction(GOBEUR_ACTIONS action){
