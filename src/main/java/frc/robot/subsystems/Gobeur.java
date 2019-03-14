@@ -16,6 +16,9 @@ public final class Gobeur extends Subsystem {
     public Gobeur(){
         gobeurGauche = new TalonSRX(RobotMap.MOTEUR_GOBEUR_GAUCHE);
         gobeurDroite = new TalonSRX(RobotMap.MOTEUR_GOBEUR_DROITE);
+
+        gobeurDroite.setInverted(true);
+
         gobeurDroite.follow(gobeurGauche);
     }
 
