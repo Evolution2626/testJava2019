@@ -35,6 +35,9 @@ public class RobotMap{
 
     public static final int BOUTON_RESET_GYRO = 1;
 
+    public static final int BOUTON_GRIMPEUR_AVANT = 4;
+    public static final int BOUTON_GRIMPEUR_ARRIERE = 5;
+
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;
 
@@ -42,6 +45,10 @@ public class RobotMap{
     //Gobeur
     public enum GOBEUR_ACTIONS { GOBER, DEGOBER, STOP }
     
-
+    //Grimpeur
+    public static final int AVANT_FOWARD = 0;
+    public static final int AVANT_REVERSE = 1;
+    public static final int ARRIERE_FOWARD = 2;
+    public static final int ARRIERE_REVERSE = 3;
 
 }

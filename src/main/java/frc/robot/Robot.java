@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Echelle;
 import frc.robot.subsystems.Gobeur;
+import frc.robot.subsystems.Grimpeur;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +28,7 @@ public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static Echelle echelle;
   public static Gobeur gobeur;
+  public static Grimpeur grimpeur;
   public static OI oi;
 
   private static final String kDefaultAuto = "Default";
@@ -44,6 +46,7 @@ public class Robot extends TimedRobot {
     drivetrain = new Drivetrain();
     echelle = new Echelle();
     gobeur = new Gobeur();
+    grimpeur = new Grimpeur();
     oi = new OI();
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);

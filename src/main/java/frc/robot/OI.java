@@ -6,6 +6,8 @@ import frc.robot.commands.EchelleDeplacerEncodeur;
 import frc.robot.commands.EchelleEtageCommand;
 import frc.robot.commands.EchelleLockCommand;
 import frc.robot.commands.GobeurSetModeCommand;
+import frc.robot.commands.GrimpeurSetCommand;
+import frc.robot.subsystems.Grimpeur.Position;
 import frc.util.Gamepad;
 
 public class OI {
@@ -28,6 +30,9 @@ public class OI {
         gamepadCoDriver.getBtn(RobotMap.BOUTON_LOCK_ECHELLE).whenPressed(new EchelleLockCommand());
 
         gamepadDriver.getBtn(RobotMap.BOUTON_RESET_GYRO).whenPressed(new DrivetrainResetGyroCommand());
+
+        gamepadDriver.getBtn(RobotMap.BOUTON_GRIMPEUR_AVANT).whenPressed(new GrimpeurSetCommand(Position.avant));
+        gamepadDriver.getBtn(RobotMap.BOUTON_GRIMPEUR_ARRIERE).whenPressed(new GrimpeurSetCommand(Position.arriere));
     }
 
 
