@@ -24,16 +24,16 @@ public class RobotMap{
     // Axes et boutons
     public static final int AXE_GAUCHE_X = 0;
     public static final int AXE_GAUCHE_Y = 1;
-    public static final int AXE_DROITE_X = 2;
-    public static final int AXE_DROITE_Y = 3;
+    public static final int AXE_DROITE_X = 4;
+    public static final int AXE_DROITE_Y = 5;
 
-    public static final int BOUTON_GOBER = 0;
-    public static final int BOUTON_DEGOBER = 0;
+    public static final int BOUTON_GOBER = 4;
+    public static final int BOUTON_DEGOBER = 5;
 
-    public static final int BOUTON_MONTER_ECHELLE_UN_PEU = 0;
+    public static final int BOUTON_DESCENDRE_ECHELLE_UN_PEU = 0;
     public static final int BOUTON_LOCK_ECHELLE = 0;
 
-    public static final int BOUTON_RESET_GYRO = 0;
+    public static final int BOUTON_RESET_GYRO = 1;
 
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;

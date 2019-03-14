@@ -23,7 +23,7 @@ public class OI {
         gamepadCoDriver.getDpadUp().whenPressed(new EchelleEtageCommand(1));
         gamepadCoDriver.getDpadDown().whenPressed(new EchelleEtageCommand(-1));
 
-        gamepadCoDriver.getBtn(RobotMap.BOUTON_MONTER_ECHELLE_UN_PEU).whenPressed(new EchelleDeplacerEncodeur(3000));
+        gamepadCoDriver.getBtn(RobotMap.BOUTON_DESCENDRE_ECHELLE_UN_PEU).whenPressed(new EchelleDeplacerEncodeur(-3000));
 
         gamepadCoDriver.getBtn(RobotMap.BOUTON_LOCK_ECHELLE).whenPressed(new EchelleLockCommand());
 
