@@ -27,16 +27,16 @@ public class RobotMap{
     public static final int AXE_DROITE_X = 4;
     public static final int AXE_DROITE_Y = 5;
 
-    public static final int BOUTON_GOBER = 5;
-    public static final int BOUTON_DEGOBER = 4;
+    public static final int BOUTON_GOBER = 6;
+    public static final int BOUTON_DEGOBER = 5;
 
-    public static final int BOUTON_DESCENDRE_ECHELLE_UN_PEU = 2;
-    public static final int BOUTON_LOCK_ECHELLE = 0;
+    public static final int BOUTON_DESCENDRE_ECHELLE_UN_PEU = 3;
+    public static final int BOUTON_LOCK_ECHELLE = 1;
 
-    public static final int BOUTON_RESET_GYRO = 1;
+    public static final int BOUTON_RESET_GYRO = 2;
 
-    public static final int BOUTON_GRIMPEUR_AVANT = 4;
-    public static final int BOUTON_GRIMPEUR_ARRIERE = 5;
+    public static final int BOUTON_GRIMPEUR_AVANT = 5;
+    public static final int BOUTON_GRIMPEUR_ARRIERE = 6;
 
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;
