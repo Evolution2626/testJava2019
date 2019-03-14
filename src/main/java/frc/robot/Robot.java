@@ -98,6 +98,7 @@ public class Robot extends TimedRobot {
         // Put default auto code here
         break;
     }
+    Scheduler.getInstance().run();
   }
 
   /**
