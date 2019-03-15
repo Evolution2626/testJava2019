@@ -12,7 +12,7 @@ public class EchelleJoystickCommand extends Command{
 
     @Override
     protected void execute() {
-        double joystick = Robot.oi.gamepadCoDriver.getRawAxis(RobotMap.AXE_DROITE_Y);
+        double joystick = Robot.oi.gamepadCoDriver.getRawAxis(RobotMap.AXE_GAUCHE_Y);
         Robot.echelle.setVitesse(joystick);
     }
 
