@@ -67,6 +67,21 @@ public class Robot extends TimedRobot {
   }
 
   /**
+     * This function is called once each time the robot enters Disabled mode. You
+     * can use it to reset any subsystem information you want to clear when the
+     * robot is disabled.
+     */
+
+    @Override
+    public void disabledInit() {
+    }
+
+    @Override
+    public void disabledPeriodic() {
+        Scheduler.getInstance().run();
+    }
+
+  /**
    * This autonomous (along with the chooser code above) shows how to select
    * between different autonomous modes using the dashboard. The sendable
    * chooser code works with the Java SmartDashboard. If you prefer the
