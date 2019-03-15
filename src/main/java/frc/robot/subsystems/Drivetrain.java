@@ -1,30 +1,32 @@
 package frc.robot.subsystems;
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import frc.robot.RobotMap;
 import frc.robot.commands.DrivetrainDriveCommand;
+import frc.util.Range;
+import frc.util.Vision;
 
 public final class Drivetrain extends Subsystem {
 
-    public CANSparkMax avantDroit;
-    public CANSparkMax avantGauche;
-    public CANSparkMax arriereDroit;
-    public CANSparkMax arriereGauche;
+    public WPI_TalonSRX avantDroit;
+    public WPI_TalonSRX avantGauche;
+    public WPI_TalonSRX arriereDroit;
+    public WPI_TalonSRX arriereGauche;
+
 
     public ADXRS450_Gyro gyro;
     public MecanumDrive mecanumDrive;
 
     public Drivetrain() {
 
-        avantDroit = new CANSparkMax(RobotMap.MOTEUR_AVANT_DROIT, MotorType.kBrushless);
-        avantGauche = new CANSparkMax(RobotMap.MOTEUR_AVANT_GAUCHE, MotorType.kBrushless);
-        arriereDroit = new CANSparkMax(RobotMap.MOTEUR_ARRIERE_DROIT, MotorType.kBrushless);
-        arriereGauche = new CANSparkMax(RobotMap.MOTEUR_ARRIERE_GAUCHE, MotorType.kBrushless);
+        avantDroit = new WPI_TalonSRX(RobotMap.MOTEUR_AVANT_DROIT);
+        avantGauche = new WPI_TalonSRX(RobotMap.MOTEUR_AVANT_GAUCHE);
+        arriereDroit = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_DROIT);
+        arriereGauche = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_GAUCHE);
 
         gyro = new ADXRS450_Gyro();
 
@@ -46,6 +48,14 @@ public final class Drivetrain extends Subsystem {
 
     public void resetGyroAngle(){
         gyro.reset();
+    }
+
+    public double alignYaw(){
+        return Range.coerce(-0.7, 0.7, Vision.tapeYaw());
+    }
+
+    public double alignTapeArea(){
+        return Range.coerce(-0.5, 0.5, (Vision.tapeArea2() - Vision.tapeArea1()));
     }
 
     @Override

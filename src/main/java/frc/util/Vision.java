@@ -16,26 +16,26 @@ import edu.wpi.first.networktables.NetworkTableInstance;
  */
 public class Vision {
 
-    NetworkTableInstance instance = NetworkTableInstance.getDefault();
-    NetworkTable vision = instance.getTable("ChickenVision");
+    private static NetworkTableInstance instance = NetworkTableInstance.getDefault();
+    private static NetworkTable vision = instance.getTable("ChickenVision");
 
-    private NetworkTableEntry tapeDetected = vision.getEntry("tapeDetected");
-    private NetworkTableEntry cargoDetected = vision.getEntry("cargoDetected");
-    private NetworkTableEntry tapeYaw = vision.getEntry("tapeYaw");
-    private NetworkTableEntry cargoYaw = vision.getEntry("cargoYaw");
-    private NetworkTableEntry tapeArea1 = vision.getEntry("tapeArea1");
-    private NetworkTableEntry tapeArea2 = vision.getEntry("tapeArea2");
+    private static NetworkTableEntry tapeDetected = vision.getEntry("tapeDetected");
+    private static NetworkTableEntry cargoDetected = vision.getEntry("cargoDetected");
+    private static NetworkTableEntry tapeYaw = vision.getEntry("tapeYaw");
+    private static NetworkTableEntry cargoYaw = vision.getEntry("cargoYaw");
+    private static NetworkTableEntry tapeArea1 = vision.getEntry("tapeArea1");
+    private static NetworkTableEntry tapeArea2 = vision.getEntry("tapeArea2");
 
-    private NetworkTableEntry driveWanted = vision.getEntry("Driver");
-    private NetworkTableEntry tapeWanted = vision.getEntry("Tape");
-    private NetworkTableEntry cargoWanted = vision.getEntry("Cargo");
+    private static NetworkTableEntry driveWanted = vision.getEntry("Driver");
+    private static NetworkTableEntry tapeWanted = vision.getEntry("Tape");
+    private static NetworkTableEntry cargoWanted = vision.getEntry("Cargo");
 
-    public boolean tapeDetected(){ return tapeDetected.getBoolean(false); }
-    public boolean cargoDetected(){ return cargoDetected.getBoolean(false); }
-    public double tapeYaw(){ return tapeYaw.getDouble(0); }
-    public double cargoYaw(){ return cargoYaw.getDouble(0); }
-    public double tapeArea1(){ return tapeArea1.getDouble(0); }
-    public double tapeArea2(){ return tapeArea2.getDouble(0); }
+    public static boolean tapeDetected(){ return tapeDetected.getBoolean(false); }
+    public static boolean cargoDetected(){ return cargoDetected.getBoolean(false); }
+    public static double tapeYaw(){ return tapeYaw.getDouble(0); }
+    public static double cargoYaw(){ return cargoYaw.getDouble(0); }
+    public static double tapeArea1(){ return tapeArea1.getDouble(0); }
+    public static double tapeArea2(){ return tapeArea2.getDouble(0); }
 
     public void driveMode(){
         driveWanted.setBoolean(true);

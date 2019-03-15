@@ -10,16 +10,16 @@ public class RobotMap{
     public static final int CODRIVER_GAMEPAD = 1;
 
     // Moteurs
-    public static final int MOTEUR_AVANT_DROIT = 0;
-    public static final int MOTEUR_AVANT_GAUCHE = 1;
-    public static final int MOTEUR_ARRIERE_DROIT = 2;
-    public static final int MOTEUR_ARRIERE_GAUCHE = 3;
+    public static final int MOTEUR_AVANT_DROIT = 6;
+    public static final int MOTEUR_AVANT_GAUCHE = 5;
+    public static final int MOTEUR_ARRIERE_DROIT = 7;
+    public static final int MOTEUR_ARRIERE_GAUCHE = 10;
 
     public static final int MOTEUR_GOBEUR_GAUCHE = 0;
     public static final int MOTEUR_GOBEUR_DROITE = 1;
 
-    public static final int MOTEUR_MASTER_ECHELLE = 0;
-    public static final int MOTEUR_SLAVE_ECHELLE = 0;
+    public static final int MOTEUR_MASTER_ECHELLE = 8;
+    public static final int MOTEUR_SLAVE_ECHELLE = 9;
 
     // Axes et boutons
     public static final int AXE_GAUCHE_X = 0;
@@ -37,6 +37,8 @@ public class RobotMap{
 
     public static final int BOUTON_GRIMPEUR_AVANT = 5;
     public static final int BOUTON_GRIMPEUR_ARRIERE = 6;
+
+    public static final int BOUTON_ALIGNER_TAPE_VISION = 0;
 
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;
