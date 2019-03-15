@@ -72,14 +72,14 @@ public class Robot extends TimedRobot {
      * robot is disabled.
      */
 
-    @Override
-    public void disabledInit() {
-    }
+  @Override
+  public void disabledInit() {
+  }
 
-    @Override
-    public void disabledPeriodic() {
-        Scheduler.getInstance().run();
-    }
+  @Override
+  public void disabledPeriodic() {
+      Scheduler.getInstance().run();
+  }
 
   /**
    * This autonomous (along with the chooser code above) shows how to select
