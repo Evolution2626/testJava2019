@@ -22,7 +22,7 @@ public final class Echelle extends Subsystem{
     public int etage = 0;
     public int positionAAtteindre = 0;
 
-    public int[] etages = {0,100,200,300,400,500,600}; //Mettre les valeurs des étages ici
+    public int[] etages = {0,8536,14118,26923,32504,45309,50891}; //Mettre les valeurs des étages ici
 
     public Echelle(){
         masterEchelle = new TalonSRX(RobotMap.MOTEUR_MASTER_ECHELLE);
