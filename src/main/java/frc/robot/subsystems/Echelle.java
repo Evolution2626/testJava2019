@@ -54,7 +54,7 @@ public final class Echelle extends Subsystem{
     }
 
     public void allerVersDestination(){
-        setVitesse(Range.coerce(-1, 1, (this.positionAAtteindre - getEncoderValue())));
+        setVitesse(Range.coerce(-1, 1, ((this.positionAAtteindre - getEncoderValue()) / RobotMap.ECHELLE_THRESHOLD_COMMENCER_A_RALENTIR)));
     }
 
     public boolean renduADestination(){

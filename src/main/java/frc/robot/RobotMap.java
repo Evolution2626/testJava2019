@@ -53,6 +53,7 @@ public class RobotMap{
 
     //Echelle
     public static final int ECHELLE_RANGE_DESTINATION = 330;
+    public static final int ECHELLE_THRESHOLD_COMMENCER_A_RALENTIR = 2954;
 
     //Threshold
     public static final double THRESHOLD_DRIVETRAIN = 0.1;
