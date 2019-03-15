@@ -19,17 +19,41 @@ public class Vision {
     NetworkTableInstance instance = NetworkTableInstance.getDefault();
     NetworkTable vision = instance.getTable("ChickenVision");
 
-    public NetworkTableEntry tapeDetected = vision.getEntry("tapeDetected");
-    public NetworkTableEntry cargoDetected = vision.getEntry("cargoDetected");
-    public NetworkTableEntry tapeYaw = vision.getEntry("tapeYaw");
-    public NetworkTableEntry cargoYaw = vision.getEntry("cargoYaw");
-    public NetworkTableEntry videoTimestamp = vision.getEntry("VideoTimestamp");
-    public NetworkTableEntry tapeArea1 = vision.getEntry("tapeArea1");
-    public NetworkTableEntry tapeArea2 = vision.getEntry("tapeArea2");
+    private NetworkTableEntry tapeDetected = vision.getEntry("tapeDetected");
+    private NetworkTableEntry cargoDetected = vision.getEntry("cargoDetected");
+    private NetworkTableEntry tapeYaw = vision.getEntry("tapeYaw");
+    private NetworkTableEntry cargoYaw = vision.getEntry("cargoYaw");
+    private NetworkTableEntry tapeArea1 = vision.getEntry("tapeArea1");
+    private NetworkTableEntry tapeArea2 = vision.getEntry("tapeArea2");
 
-    public NetworkTableEntry driveWanted = vision.getEntry("Driver");
-    public NetworkTableEntry tapeWanted = vision.getEntry("Tape");
-    public NetworkTableEntry cargoWanted = vision.getEntry("Cargo");
+    private NetworkTableEntry driveWanted = vision.getEntry("Driver");
+    private NetworkTableEntry tapeWanted = vision.getEntry("Tape");
+    private NetworkTableEntry cargoWanted = vision.getEntry("Cargo");
+
+    public boolean tapeDetected(){ return tapeDetected.getBoolean(false); }
+    public boolean cargoDetected(){ return cargoDetected.getBoolean(false); }
+    public double tapeYaw(){ return tapeYaw.getDouble(0); }
+    public double cargoYaw(){ return cargoYaw.getDouble(0); }
+    public double tapeArea1(){ return tapeArea1.getDouble(0); }
+    public double tapeArea2(){ return tapeArea2.getDouble(0); }
+
+    public void driveMode(){
+        driveWanted.setBoolean(true);
+        tapeWanted.setBoolean(false);
+        cargoWanted.setBoolean(false);
+    }
+
+    public void tapeMode(){
+        driveWanted.setBoolean(false);
+        tapeWanted.setBoolean(true);
+        cargoWanted.setBoolean(false);
+    }
+
+    public void cargoMode(){
+        driveWanted.setBoolean(false);
+        tapeWanted.setBoolean(false);
+        cargoWanted.setBoolean(true);
+    }
 
 
 }
