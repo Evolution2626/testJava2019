@@ -51,4 +51,7 @@ public class RobotMap{
     public static final int ARRIERE_FOWARD = 2;
     public static final int ARRIERE_REVERSE = 3;
 
+    //Threshold
+    public static final double THRESHOLD_DRIVETRAIN = 0.1;
+
 }
