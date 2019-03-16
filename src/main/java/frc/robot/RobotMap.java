@@ -54,7 +54,7 @@ public class RobotMap{
     public static final int ARRIERE_REVERSE = 3;
 
     //Echelle
-    public static final int ECHELLE_RANGE_DESTINATION = 330;
+    public static final int ECHELLE_RANGE_DESTINATION = 1000;
     public static final int ECHELLE_THRESHOLD_COMMENCER_A_RALENTIR = 2954;
 
     //Threshold

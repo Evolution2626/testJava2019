@@ -121,6 +121,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    System.out.println(Robot.echelle.getEncoderValue());
     Scheduler.getInstance().run();
   }
 

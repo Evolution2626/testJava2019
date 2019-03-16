@@ -33,6 +33,8 @@ public final class Echelle extends Subsystem{
         masterEchelle.setNeutralMode(NeutralMode.Brake);
         slaveEchelle.setNeutralMode(NeutralMode.Brake);
 
+        slaveEchelle.setInverted(true);
+
         masterEchelle.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
 
         resetEncoderValue();
@@ -46,7 +48,7 @@ public final class Echelle extends Subsystem{
     }
 
     public int getEncoderValue(){
-        return masterEchelle.getSelectedSensorPosition();
+        return -masterEchelle.getSelectedSensorPosition();
     }
 
     public void resetEncoderValue(){
@@ -54,16 +56,19 @@ public final class Echelle extends Subsystem{
     }
 
     public void allerVersDestination(){
-        setVitesse(Range.coerce(-1, 1, ((this.positionAAtteindre - getEncoderValue()) / RobotMap.ECHELLE_THRESHOLD_COMMENCER_A_RALENTIR)));
+        setVitesse(Range.coerce(-0.3, 0.3, ((this.positionAAtteindre - getEncoderValue()))));
     }
 
     public boolean renduADestination(){
+        System.out.println("fucking marde" + (this.positionAAtteindre - getEncoderValue()));
+        System.out.println(Range.inRange(-RobotMap.ECHELLE_RANGE_DESTINATION, RobotMap.ECHELLE_RANGE_DESTINATION, (this.positionAAtteindre - getEncoderValue()))
+        || (estEnBas() && (this.positionAAtteindre - getEncoderValue()) < 0));
         return Range.inRange(-RobotMap.ECHELLE_RANGE_DESTINATION, RobotMap.ECHELLE_RANGE_DESTINATION, (this.positionAAtteindre - getEncoderValue()))
         || (estEnBas() && (this.positionAAtteindre - getEncoderValue()) < 0);
     }
 
     public boolean estEnBas(){
-        return limitSwitch.get();
+        return !limitSwitch.get();
     }
 
     public double protectionVitesse(double vitesse){
