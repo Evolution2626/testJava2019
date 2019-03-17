@@ -14,7 +14,7 @@ public class EchelleEtageUpCommand extends Command {
 
     @Override
     protected void initialize() {
-        Robot.echelle.etage = (int) Range.coerce(0, Robot.echelle.etages.length, Robot.echelle.etage + 1);
+        Robot.echelle.etage = (int) Range.coerce(0, Robot.echelle.etages.length - 1, Robot.echelle.etage + 1);
         Robot.echelle.positionAAtteindre = Robot.echelle.etages[Robot.echelle.etage];
         System.out.println("etage" + Robot.echelle.etage + "hauteur" + Robot.echelle.positionAAtteindre + "positionactuel" + Robot.echelle.getEncoderValue());
     }
