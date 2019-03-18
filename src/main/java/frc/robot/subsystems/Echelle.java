@@ -71,7 +71,6 @@ public final class Echelle extends Subsystem{
     public double protectionVitesse(double vitesse){
         if (estEnBas()){
             resetEncoderValue();
-            this.etage = 0;
             return Range.coerce(0, 1, vitesse);
         }
 
