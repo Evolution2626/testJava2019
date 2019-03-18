@@ -25,7 +25,11 @@ public class DrivetrainAlignerVisionCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.drivetrain.mecDrive(Robot.drivetrain.alignYaw(), 0, Robot.drivetrain.alignTapeArea(), false);
+    if (Vision.tapeDetected()) {
+      Robot.drivetrain.mecDrive(Robot.drivetrain.alignYaw(), 0, Robot.drivetrain.alignTapeArea(), false);
+    }else{
+      Robot.drivetrain.mecDrive(0, 0, 0, false);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
