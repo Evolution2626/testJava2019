@@ -15,6 +15,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Echelle;
 import frc.robot.subsystems.Gobeur;
 import frc.robot.subsystems.Grimpeur;
+import frc.util.Vision;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -64,6 +65,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    SmartDashboard.putNumber("Encoder position", Robot.echelle.getEncoderValue());
+    SmartDashboard.putData("Gyro Angle", Robot.drivetrain.gyro);
+    SmartDashboard.putData("Piston Avant", Robot.grimpeur.avant);
+    SmartDashboard.putData("Piston Arrière", Robot.grimpeur.arriere);
+    SmartDashboard.putData("Capteur Ligne", Robot.drivetrain.capteurLigne);
+
   }
 
   /**
@@ -116,12 +123,16 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
   }
 
+  @Override
+  public void teleopInit() {
+    Vision.tapeMode();
+  }
+
   /**
    * This function is called periodically during operator control.
    */
   @Override
   public void teleopPeriodic() {
-    System.out.println(Robot.echelle.getEncoderValue());
     Scheduler.getInstance().run();
   }
 

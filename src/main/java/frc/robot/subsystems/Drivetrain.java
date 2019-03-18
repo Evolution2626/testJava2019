@@ -3,6 +3,8 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.SPI.Port;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import frc.robot.RobotMap;
@@ -17,7 +19,7 @@ public final class Drivetrain extends Subsystem {
     public WPI_TalonSRX arriereDroit;
     public WPI_TalonSRX arriereGauche;
 
-
+    public DigitalInput capteurLigne;
     public ADXRS450_Gyro gyro;
     public MecanumDrive mecanumDrive;
 
@@ -28,9 +30,11 @@ public final class Drivetrain extends Subsystem {
         arriereDroit = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_DROIT);
         arriereGauche = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_GAUCHE);
 
-        gyro = new ADXRS450_Gyro();
+        gyro = new ADXRS450_Gyro(Port.kOnboardCS2);
 
         mecanumDrive = new MecanumDrive(avantGauche, arriereGauche, avantDroit, arriereDroit);
+
+        capteurLigne = new DigitalInput(RobotMap.CAPTEUR_LIGNE);
     }
 
     public void mecDrive(double axeX, double axeY, double axeZ, boolean useGyro){
@@ -51,11 +55,30 @@ public final class Drivetrain extends Subsystem {
     }
 
     public double alignYaw(){
-        return Range.coerce(-0.7, 0.7, Vision.tapeYaw());
+        return Range.coerce(-0.12, 0.12, Vision.tapeYaw());
     }
 
     public double alignTapeArea(){
-        return Range.coerce(-0.5, 0.5, (Vision.tapeArea2() - Vision.tapeArea1()));
+        return Range.coerce(0, 0, (Vision.tapeArea2() - Vision.tapeArea1()));
+    }
+
+    public boolean voitLaLigne(){
+        return capteurLigne.get();
+    }
+
+    public void alignLine(RobotMap.POSITION position){
+        if (!voitLaLigne()) {
+            switch (position) {
+                case DROITE:
+                    mecDrive(0.2, 0, 0, false);
+                    break;
+                case GAUCHE:
+                    mecDrive(-0.2, 0, 0, false);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     @Override

@@ -10,6 +10,8 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.util.Range;
+import frc.util.Speed;
 import frc.util.Vision;
 
 public class DrivetrainAlignerVisionCommand extends Command {
@@ -25,8 +27,10 @@ public class DrivetrainAlignerVisionCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double axeX = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_GAUCHE_X));
+    double axeY = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_GAUCHE_Y));
     if (Vision.tapeDetected()) {
-      Robot.drivetrain.mecDrive(Robot.drivetrain.alignYaw(), 0, Robot.drivetrain.alignTapeArea(), false);
+      Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), Robot.drivetrain.alignYaw(), false);
     }else{
       Robot.drivetrain.mecDrive(0, 0, 0, false);
     }

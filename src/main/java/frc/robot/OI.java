@@ -1,6 +1,7 @@
 package frc.robot;
 
 import frc.robot.RobotMap.GOBEUR_ACTIONS;
+import frc.robot.commands.DrivetrainAlignerLigne;
 import frc.robot.commands.DrivetrainAlignerVisionCommand;
 import frc.robot.commands.DrivetrainResetGyroCommand;
 import frc.robot.commands.EchelleDeplacerEncodeur;
@@ -33,6 +34,10 @@ public class OI {
         gamepadDriver.getBtn(RobotMap.BOUTON_GRIMPEUR_ARRIERE).whenPressed(new GrimpeurSetCommand(Position.arriere));
 
         gamepadDriver.getBtn(RobotMap.BOUTON_ALIGNER_TAPE_VISION).whenPressed(new DrivetrainAlignerVisionCommand());
+
+        gamepadDriver.getDpadLeft().whileHeld(new DrivetrainAlignerLigne(RobotMap.POSITION.GAUCHE));
+        gamepadDriver.getDpadRight().whileHeld(new DrivetrainAlignerLigne(RobotMap.POSITION.DROITE));
+
     }
 
 

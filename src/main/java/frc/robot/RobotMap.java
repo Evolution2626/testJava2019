@@ -37,11 +37,14 @@ public class RobotMap{
     public static final int BOUTON_GRIMPEUR_AVANT = 5;
     public static final int BOUTON_GRIMPEUR_ARRIERE = 6;
 
-    public static final int BOUTON_ALIGNER_TAPE_VISION = 0;
+    public static final int BOUTON_ALIGNER_TAPE_VISION = 4;
 
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;
 
+    public static final int CAPTEUR_LIGNE = 1;
+
+    public enum POSITION { DROITE, GAUCHE }
 
     //Gobeur
     public enum GOBEUR_ACTIONS { GOBER, DEGOBER, STOP }

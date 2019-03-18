@@ -14,8 +14,9 @@ public class EchelleBougerCommand extends Command{
     @Override
     protected void execute() {
         double joystick = Robot.oi.gamepadCoDriver.getRawAxis(RobotMap.AXE_GAUCHE_Y);
-        if (Range.inRange(-0.1, 0.1, joystick)) {
-            Robot.echelle.setVitesse(-joystick);
+        if (!Range.inRange(-0.1, 0.1, joystick)) {
+            System.out.println(joystick);
+            Robot.echelle.setVitesse(joystick);
             Robot.echelle.positionAAtteindre = Robot.echelle.getEncoderValue();
         }else{
             Robot.echelle.allerVersDestination();
