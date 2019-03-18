@@ -31,7 +31,6 @@ public class RobotMap{
     public static final int BOUTON_DEGOBER = 5;
 
     public static final int BOUTON_DESCENDRE_ECHELLE_UN_PEU = 3;
-    public static final int BOUTON_LOCK_ECHELLE = 1;
 
     public static final int BOUTON_RESET_GYRO = 2;
 

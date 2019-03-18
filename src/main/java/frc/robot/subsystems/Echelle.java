@@ -8,7 +8,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.EchelleJoystickCommand;
+import frc.robot.commands.EchelleBougerCommand;
 import frc.util.Range;
 
 
@@ -80,6 +80,6 @@ public final class Echelle extends Subsystem{
 
     @Override
     protected void initDefaultCommand() {
-        setDefaultCommand(new EchelleJoystickCommand());
+        setDefaultCommand(new EchelleBougerCommand());
     }
 }

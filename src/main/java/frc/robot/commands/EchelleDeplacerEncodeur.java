@@ -1,9 +1,9 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
-public class EchelleDeplacerEncodeur extends Command {
+public class EchelleDeplacerEncodeur extends InstantCommand {
 
     private int distance;
 
@@ -15,22 +15,6 @@ public class EchelleDeplacerEncodeur extends Command {
     @Override
     protected void initialize() {
         Robot.echelle.positionAAtteindre = Robot.echelle.getEncoderValue() + this.distance;
-    }
-
-    @Override
-    protected void execute() {
-        Robot.echelle.allerVersDestination();
-    }
-
-
-    @Override
-    protected boolean isFinished() {
-        return Robot.echelle.renduADestination();
-    }
-
-    @Override
-    protected void end(){
-        Robot.echelle.setVitesse(0);
     }
 
 }
