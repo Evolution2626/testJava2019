@@ -37,19 +37,19 @@ public class Vision {
     public static double tapeArea1(){ return tapeArea1.getDouble(0); }
     public static double tapeArea2(){ return tapeArea2.getDouble(0); }
 
-    public void driveMode(){
+    public static void driveMode(){
         driveWanted.setBoolean(true);
         tapeWanted.setBoolean(false);
         cargoWanted.setBoolean(false);
     }
 
-    public void tapeMode(){
+    public static void tapeMode(){
         driveWanted.setBoolean(false);
         tapeWanted.setBoolean(true);
         cargoWanted.setBoolean(false);
     }
 
-    public void cargoMode(){
+    public static void cargoMode(){
         driveWanted.setBoolean(false);
         tapeWanted.setBoolean(false);
         cargoWanted.setBoolean(true);

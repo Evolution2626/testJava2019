@@ -10,10 +10,16 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.util.Vision;
 
 public class DrivetrainAlignerVisionCommand extends Command {
   public DrivetrainAlignerVisionCommand() {
     requires(Robot.drivetrain);
+  }
+
+  @Override
+  protected void initialize(){
+    Vision.tapeMode();
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -31,6 +37,7 @@ public class DrivetrainAlignerVisionCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Vision.driveMode();
   }
 
 }

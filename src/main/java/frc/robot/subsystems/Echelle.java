@@ -60,8 +60,6 @@ public final class Echelle extends Subsystem{
     }
 
     public boolean renduADestination(){
-        System.out.println(Range.inRange(-RobotMap.ECHELLE_RANGE_DESTINATION, RobotMap.ECHELLE_RANGE_DESTINATION, (this.positionAAtteindre - getEncoderValue()))
-        || (estEnBas() && (this.positionAAtteindre - getEncoderValue()) < 0));
         return Range.inRange(-RobotMap.ECHELLE_RANGE_DESTINATION, RobotMap.ECHELLE_RANGE_DESTINATION, (this.positionAAtteindre - getEncoderValue()))
         || (estEnBas() && (this.positionAAtteindre - getEncoderValue()) < 0);
     }
