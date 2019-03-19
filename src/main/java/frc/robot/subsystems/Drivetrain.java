@@ -30,6 +30,12 @@ public final class Drivetrain extends Subsystem {
         arriereDroit = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_DROIT);
         arriereGauche = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_GAUCHE);
 
+        avantDroit.configClosedloopRamp(.1);
+        avantGauche.configClosedloopRamp(.1);
+        arriereDroit.configClosedloopRamp(.1);
+        arriereGauche.configClosedloopRamp(.1);
+
+
         gyro = new ADXRS450_Gyro(Port.kOnboardCS2);
 
         mecanumDrive = new MecanumDrive(avantGauche, arriereGauche, avantDroit, arriereDroit);
