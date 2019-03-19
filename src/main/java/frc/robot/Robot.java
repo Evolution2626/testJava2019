@@ -71,6 +71,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Piston Arrière", Robot.grimpeur.arriere);
     SmartDashboard.putData("Capteur Ligne", Robot.drivetrain.capteurLigne);
     SmartDashboard.putData("Limit Switch", Robot.echelle.limitSwitch);
+    SmartDashboard.putNumber("Etage", Robot.echelle.etage);
 
   }
 
