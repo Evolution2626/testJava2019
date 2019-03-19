@@ -68,12 +68,12 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Encoder position", Robot.echelle.getEncoderValue());
     SmartDashboard.putData("Gyro Angle", Robot.drivetrain.gyro);
     SmartDashboard.putData("Piston Avant", Robot.grimpeur.avant);
-    SmartDashboard.putData("Piston Arrière", Robot.grimpeur.arriere);
+    SmartDashboard.putData("Piston Arriere", Robot.grimpeur.arriere);
     SmartDashboard.putData("Capteur Ligne", Robot.drivetrain.capteurLigne);
     SmartDashboard.putData("Limit Switch", Robot.echelle.limitSwitch);
     SmartDashboard.putNumber("Etage", Robot.echelle.etage);
     SmartDashboard.putNumber("TalonEchelle1Voltage", Robot.echelle.masterEchelle.getOutputCurrent());
-    SmartDashboard.putNumber("TalonEchelle1Voltage", Robot.echelle.slaveEchelle.getOutputCurrent());
+    SmartDashboard.putNumber("TalonEchelle2Voltage", Robot.echelle.slaveEchelle.getOutputCurrent());
 
   }
 
