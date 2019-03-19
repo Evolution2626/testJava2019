@@ -1,4 +1,4 @@
-/*----------------------------------------------------------------------------*/
+﻿/*----------------------------------------------------------------------------*/
 /* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
@@ -74,11 +74,7 @@ public class Robot extends TimedRobot {
 
   }
 
-  /**
-     * This function is called once each time the robot enters Disabled mode. You
-     * can use it to reset any subsystem information you want to clear when the
-     * robot is disabled.
-     */
+ 
 
   @Override
   public void disabledInit() {
