@@ -72,8 +72,8 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Capteur Ligne", Robot.drivetrain.capteurLigne);
     SmartDashboard.putData("Limit Switch", Robot.echelle.limitSwitch);
     SmartDashboard.putNumber("Etage", Robot.echelle.etage);
-    SmartDashboard.putNumber("TalonEchelle1Voltage", Robot.echelle.masterEchelle.getOutputCurrent());
-    SmartDashboard.putNumber("TalonEchelle2Voltage", Robot.echelle.slaveEchelle.getOutputCurrent());
+    SmartDashboard.putNumber("TalonEchelle1Amperage", Robot.echelle.masterEchelle.getOutputCurrent()/12);
+    SmartDashboard.putNumber("TalonEchelle2Amperage", Robot.echelle.slaveEchelle.getOutputCurrent()/12);
 
   }
 
