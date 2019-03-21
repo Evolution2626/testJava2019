@@ -65,7 +65,7 @@ public final class Drivetrain extends Subsystem {
     }
 
     public double alignTapeArea(){
-        return Range.coerce(0, 0, (Vision.tapeArea2() - Vision.tapeArea1()));
+        return Range.coerce(-0.1, 0.1, (Vision.tapeArea2() - Vision.tapeArea1()));
     }
 
     public boolean voitLaLigne(){
