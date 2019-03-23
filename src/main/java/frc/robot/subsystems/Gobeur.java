@@ -27,7 +27,7 @@ public final class Gobeur extends Subsystem {
     public void setAction(GOBEUR_ACTIONS action){
         switch (action) {
             case GOBER:
-                setMoteurs(0.5);
+                setMoteurs(1);
                 break;
             case DEGOBER:
                 setMoteurs(-1);
