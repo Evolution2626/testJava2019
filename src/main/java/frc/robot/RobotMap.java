@@ -21,6 +21,8 @@ public class RobotMap{
     public static final int MOTEUR_MASTER_ECHELLE = 8;
     public static final int MOTEUR_SLAVE_ECHELLE = 9;
 
+    public static final int MOTEUR_GRIMPEUR_ARRIERE = 0;
+
     // Axes et boutons
     public static final int AXE_GAUCHE_X = 0;
     public static final int AXE_GAUCHE_Y = 1;

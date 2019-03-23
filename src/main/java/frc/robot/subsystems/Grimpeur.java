@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
@@ -18,12 +19,20 @@ public class Grimpeur extends Subsystem {
   public DoubleSolenoid avant;
   public DoubleSolenoid arriere;
 
+  public VictorSP moteurArriere;
+
   public enum Position {avant, arriere}
 
   public Grimpeur(){
     avant = new DoubleSolenoid(RobotMap.AVANT_FOWARD, RobotMap.AVANT_REVERSE);
     arriere = new DoubleSolenoid(RobotMap.ARRIERE_FOWARD, RobotMap.ARRIERE_REVERSE);
 
+    moteurArriere = new VictorSP(RobotMap.MOTEUR_GRIMPEUR_ARRIERE);
+
+  }
+
+  public void moteurSetVitesse(double vitesse){
+    moteurArriere.set(vitesse);
   }
   
   public void changerPosition(Value valeur, Position pos){
