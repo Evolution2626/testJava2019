@@ -66,7 +66,7 @@ public final class Echelle extends Subsystem{
     }
 
     public void allerVersDestination(){
-        setVitesse(Range.coerce(-0.2, 0.3, ((this.positionAAtteindre - getEncoderValue())/1000)));
+        setVitesse(Range.coerce(-0.2, 1, ((this.positionAAtteindre - getEncoderValue())/3936)));
     }
 
     public boolean renduADestination(){
