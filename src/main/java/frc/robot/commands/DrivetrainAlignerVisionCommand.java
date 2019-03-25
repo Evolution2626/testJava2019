@@ -32,7 +32,7 @@ public class DrivetrainAlignerVisionCommand extends Command {
     if (Vision.tapeDetected()) {
       Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), Robot.drivetrain.alignYaw(), false);
     }else{
-      Robot.drivetrain.mecDrive(0, 0, 0, false);
+      Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), 0, false);
     }
   }
 
