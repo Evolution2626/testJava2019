@@ -4,11 +4,9 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.SPI.Port;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.commands.DrivetrainDriveCommand;
 import frc.util.Range;
@@ -51,8 +49,6 @@ public final class Drivetrain extends Subsystem {
         }else{
             mecanumDrive.driveCartesian(axeY, axeX, axeZ);
         }
-
-        if (Timer.getMatchTime() <= 30) Robot.grimpeur.moteurSetVitesse(axeY);
         
     }
 

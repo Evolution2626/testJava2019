@@ -10,6 +10,7 @@ public class DrivetrainDriveCommand extends Command{
 
     public DrivetrainDriveCommand(){
         requires(Robot.drivetrain);
+        requires(Robot.grimpeur);
     }
 
     @Override
@@ -19,6 +20,8 @@ public class DrivetrainDriveCommand extends Command{
         double axeZ = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_DROITE_X));
 
         Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), axeZ, true);
+
+        if (true) Robot.grimpeur.moteurSetVitesse(axeY);
     }
 
     @Override
