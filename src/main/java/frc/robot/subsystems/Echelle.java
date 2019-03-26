@@ -22,8 +22,8 @@ public final class Echelle extends Subsystem{
     public int etage = 0;
     public int positionAAtteindre = 0;
 
-    public int hauteurDuSolHatch = (int) (12.5 * 656.5);
-    public int hauteurDuSolBallon = (int) (6.5 * 656.5);
+    public int hauteurDuSolHatch = (int) (12.5 * 656.5); // le premier chiffre de la multiplication est la hauteur en pouces du crochet du sol lorsqu'il est descendu
+    public int hauteurDuSolBallon = (int) (6.5 * 656.5); // le premier chiffre de la multiplication est la hauteur en pouces du gobeur du sol lorsqu'il est descendu
 
 
     public int[] etages = { 0,
@@ -69,7 +69,7 @@ public final class Echelle extends Subsystem{
         setVitesse(Range.coerce(-0.2, 1, ((this.positionAAtteindre - getEncoderValue())/3936)));
     }
 
-    public boolean renduADestination(){
+    public boolean renduADestination(){ // Cette fonction n'est plus appelée depuis les changements au fonctionnement de l'échelle
         return Range.inRange(-RobotMap.ECHELLE_RANGE_DESTINATION, RobotMap.ECHELLE_RANGE_DESTINATION, (this.positionAAtteindre - getEncoderValue()))
         || (estEnBas() && (this.positionAAtteindre - getEncoderValue()) < 0);
     }
