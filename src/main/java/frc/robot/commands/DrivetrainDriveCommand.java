@@ -16,7 +16,7 @@ public class DrivetrainDriveCommand extends Command{
     @Override
     protected void execute() {
         double axeX = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_GAUCHE_X));
-        double axeY = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_GAUCHE_Y));
+        double axeY = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, -Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_GAUCHE_Y));
         double axeZ = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_DROITE_X));
 
         Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), axeZ, true);

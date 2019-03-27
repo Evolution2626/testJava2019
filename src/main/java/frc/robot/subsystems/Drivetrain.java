@@ -45,9 +45,9 @@ public final class Drivetrain extends Subsystem {
 
     public void mecDrive(double axeX, double axeY, double axeZ, boolean useGyro){
         if (useGyro) {
-            mecanumDrive.driveCartesian(axeY, axeX, axeZ, getGyroAngle());
+            mecanumDrive.driveCartesian(axeX, axeY, axeZ, -getGyroAngle());
         }else{
-            mecanumDrive.driveCartesian(axeY, axeX, axeZ);
+            mecanumDrive.driveCartesian(axeX, axeY, axeZ);
         }
         
     }
