@@ -28,6 +28,12 @@ public class Gamepad extends Joystick{
     public DPadButton getDpadRight(){ return new DPadButton(this, DPadButton.Direction.RIGHT); }
 
 
+    public void setBothRumble(double vibrationIntensity){
+        this.setRumble(RumbleType.kLeftRumble, vibrationIntensity);
+        this.setRumble(RumbleType.kRightRumble, vibrationIntensity);
+    }
+
+
 
     /**
      * Cette classe permet d'ajouter les boutons DPad en tant qu'objet Button
