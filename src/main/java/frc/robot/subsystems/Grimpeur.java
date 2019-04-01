@@ -19,7 +19,7 @@ public class Grimpeur extends Subsystem {
   public DoubleSolenoid avant;
   public DoubleSolenoid arriere;
 
-  public VictorSP moteurArriere;
+  
 
   public enum Position {avant, arriere}
 
@@ -27,13 +27,11 @@ public class Grimpeur extends Subsystem {
     avant = new DoubleSolenoid(RobotMap.AVANT_FOWARD, RobotMap.AVANT_REVERSE);
     arriere = new DoubleSolenoid(RobotMap.ARRIERE_FOWARD, RobotMap.ARRIERE_REVERSE);
 
-    moteurArriere = new VictorSP(RobotMap.MOTEUR_GRIMPEUR_ARRIERE);
+    
 
   }
 
-  public void moteurSetVitesse(double vitesse){
-    moteurArriere.set(vitesse);
-  }
+  
   
   public void changerPosition(Value valeur, Position pos){
     if (pos == Position.avant) {
@@ -55,6 +53,11 @@ public class Grimpeur extends Subsystem {
       return arriere.get();
     }
     return Value.kReverse;
+  }
+
+  public void setBothPosition(Value val){
+    avant.set(val);
+    arriere.set(val);
   }
 
   @Override

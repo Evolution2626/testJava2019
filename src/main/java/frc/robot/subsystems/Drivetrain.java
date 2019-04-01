@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.SPI.Port;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
@@ -23,12 +24,16 @@ public final class Drivetrain extends Subsystem {
     public ADXRS450_Gyro gyro;
     public MecanumDrive mecanumDrive;
 
+    public VictorSP moteurArriere;
+
     public Drivetrain() {
 
         avantDroit = new WPI_TalonSRX(RobotMap.MOTEUR_AVANT_DROIT);
         avantGauche = new WPI_TalonSRX(RobotMap.MOTEUR_AVANT_GAUCHE);
         arriereDroit = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_DROIT);
         arriereGauche = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_GAUCHE);
+
+        moteurArriere = new VictorSP(RobotMap.MOTEUR_GRIMPEUR_ARRIERE);
 
         avantDroit.configClosedloopRamp(.1);
         avantGauche.configClosedloopRamp(.1);
@@ -86,6 +91,10 @@ public final class Drivetrain extends Subsystem {
             }
         }
     }
+
+    public void moteurGrimpeurSetVitesse(double vitesse){
+        moteurArriere.set(vitesse);
+      }
 
     @Override
     protected void initDefaultCommand() {

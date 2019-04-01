@@ -10,12 +10,11 @@ public final class Gobeur extends Subsystem {
 
     public VictorSP gobeurDroite;
     public VictorSP gobeurGauche;
-    public VictorSP moteurRouleau;
-
+    
     public Gobeur(){
         gobeurGauche = new VictorSP(RobotMap.MOTEUR_GOBEUR_GAUCHE);
         gobeurDroite = new VictorSP(RobotMap.MOTEUR_GOBEUR_DROITE);
-        moteurRouleau = new VictorSP(RobotMap.MOTEUR_ROULEAU);
+       
 
         gobeurDroite.setInverted(true);
 
@@ -24,7 +23,7 @@ public final class Gobeur extends Subsystem {
     public void setMoteurs(double vitesse){
         gobeurGauche.set(vitesse);
         gobeurDroite.set(vitesse);
-        moteurRouleau.set(vitesse);
+        
     }
 
     public void setAction(GOBEUR_ACTIONS action){

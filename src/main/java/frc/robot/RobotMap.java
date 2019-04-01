@@ -17,7 +17,7 @@ public class RobotMap{
 
     public static final int MOTEUR_GOBEUR_GAUCHE = 0;
     public static final int MOTEUR_GOBEUR_DROITE = 1;
-    public static final int MOTEUR_ROULEAU = 3;
+    
 
     public static final int MOTEUR_MASTER_ECHELLE = 8;
     public static final int MOTEUR_SLAVE_ECHELLE = 9;

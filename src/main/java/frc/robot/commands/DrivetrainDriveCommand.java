@@ -10,7 +10,6 @@ public class DrivetrainDriveCommand extends Command{
 
     public DrivetrainDriveCommand(){
         requires(Robot.drivetrain);
-        requires(Robot.grimpeur);
     }
 
     @Override
@@ -21,7 +20,7 @@ public class DrivetrainDriveCommand extends Command{
 
         Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), axeZ, true);
 
-        if (true) Robot.grimpeur.moteurSetVitesse(axeY);
+        if (true) Robot.drivetrain.moteurGrimpeurSetVitesse(axeY);
     }
 
     @Override

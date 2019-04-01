@@ -27,6 +27,7 @@ public class GrimpeurSetCommand extends InstantCommand {
   // Called once when the command executes
   @Override
   protected void initialize() {
+
     if (Robot.grimpeur.currentPosition(position) == Value.kForward) {
       Robot.grimpeur.changerPosition(Value.kReverse, position);
     } else {

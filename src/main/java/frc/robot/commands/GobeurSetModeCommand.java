@@ -15,6 +15,7 @@ public class GobeurSetModeCommand extends InstantCommand {
 
     @Override
     protected void initialize(){
+        
         Robot.gobeur.setAction(this.action);
     }
 }
