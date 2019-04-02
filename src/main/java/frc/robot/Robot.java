@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -33,6 +34,8 @@ public class Robot extends TimedRobot {
   public static Grimpeur grimpeur;
   public static OI oi;
 
+  public static Compressor compresseur;
+
   private static final String kDefaultAuto = "Default";
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
@@ -50,6 +53,8 @@ public class Robot extends TimedRobot {
     gobeur = new Gobeur();
     grimpeur = new Grimpeur();
     oi = new OI();
+
+    compresseur = new Compressor(0);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
@@ -82,6 +87,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void disabledInit() {
+    compresseur.setClosedLoopControl(false);
   }
 
   @Override
@@ -136,6 +142,12 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+  }
+
+
+  @Override
+  public void testInit() {
+    compresseur.setClosedLoopControl(true);
   }
 
   /**
