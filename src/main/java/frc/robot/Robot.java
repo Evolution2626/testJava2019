@@ -87,7 +87,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void disabledInit() {
-    compresseur.setClosedLoopControl(false);
+    compresseur.stop();
   }
 
   @Override
@@ -147,7 +147,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void testInit() {
-    compresseur.setClosedLoopControl(true);
+    compresseur.start();
   }
 
   /**
