@@ -22,7 +22,7 @@ public class DrivetrainDriveCommand extends Command{
 
         Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), axeZ, true);
 
-        if (Timer.getMatchTime() <= 45 && RobotState.isOperatorControl()) Robot.drivetrain.moteurGrimpeurSetVitesse(axeY);
+        if ((Timer.getMatchTime() <= 45 && RobotState.isOperatorControl()) || Robot.drivetrain.bypassMoteurGrimpeur) Robot.drivetrain.moteurGrimpeurSetVitesse(axeY);
     }
 
     @Override

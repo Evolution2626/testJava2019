@@ -27,6 +27,8 @@ public final class Drivetrain extends Subsystem {
     public MecanumDrive mecanumDrive;
 
     public VictorSP moteurArriere;
+    
+    public boolean bypassMoteurGrimpeur = false;
 
     public Drivetrain() {
 
