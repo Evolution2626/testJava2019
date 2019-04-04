@@ -42,6 +42,11 @@ public final class Drivetrain extends Subsystem {
         arriereDroit.setIdleMode(IdleMode.kBrake);
         arriereGauche.setIdleMode(IdleMode.kBrake);
 
+        avantDroit.setClosedLoopRampRate(.1);
+        avantGauche.setClosedLoopRampRate(.1);
+        arriereDroit.setClosedLoopRampRate(.1);
+        arriereGauche.setClosedLoopRampRate(.1);
+
         setAllCurrentLimit(35, 20);
 
         moteurArriere = new VictorSP(RobotMap.MOTEUR_GRIMPEUR_ARRIERE);
