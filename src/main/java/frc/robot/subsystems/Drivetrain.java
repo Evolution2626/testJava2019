@@ -47,6 +47,11 @@ public final class Drivetrain extends Subsystem {
         arriereDroit.setClosedLoopRampRate(.1);
         arriereGauche.setClosedLoopRampRate(.1);
 
+        avantDroit.setInverted(true);
+        avantGauche.setInverted(false);
+        arriereDroit.setInverted(true);
+        arriereGauche.setInverted(false);
+
         setAllCurrentLimit(35, 20);
 
         moteurArriere = new VictorSP(RobotMap.MOTEUR_GRIMPEUR_ARRIERE);

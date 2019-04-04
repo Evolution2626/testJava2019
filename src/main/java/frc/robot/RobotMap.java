@@ -10,13 +10,13 @@ public class RobotMap{
     public static final int CODRIVER_GAMEPAD = 1;
 
     // Moteurs
-    public static final int MOTEUR_AVANT_DROIT = 6;
-    public static final int MOTEUR_AVANT_GAUCHE = 5;
-    public static final int MOTEUR_ARRIERE_DROIT = 7;
-    public static final int MOTEUR_ARRIERE_GAUCHE = 10;
+    public static final int MOTEUR_AVANT_DROIT = 7;
+    public static final int MOTEUR_AVANT_GAUCHE = 8;
+    public static final int MOTEUR_ARRIERE_DROIT = 6;
+    public static final int MOTEUR_ARRIERE_GAUCHE = 5;
 
-    public static final int MOTEUR_GOBEUR_GAUCHE = 0;
-    public static final int MOTEUR_GOBEUR_DROITE = 1;
+    public static final int MOTEUR_GOBEUR_GAUCHE = 10;
+    public static final int MOTEUR_GOBEUR_DROITE = 11;
     
 
     public static final int MOTEUR_MASTER_ECHELLE = 8;
