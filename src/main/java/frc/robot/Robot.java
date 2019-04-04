@@ -108,6 +108,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    grimpeur.setBothPosition(Value.kReverse);
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);

@@ -33,6 +33,11 @@ public class Grimpeur extends Subsystem {
   
   
   public void changerPosition(Value valeur, Position pos){
+
+    if (valeur == Value.kForward) {
+      
+    }
+
     if (pos == Position.avant) {
       avant.set(valeur);
     }

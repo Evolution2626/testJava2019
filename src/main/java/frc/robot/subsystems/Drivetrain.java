@@ -1,6 +1,8 @@
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMax.IdleMode;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -15,10 +17,10 @@ import frc.util.Vision;
 
 public final class Drivetrain extends Subsystem {
 
-    public WPI_TalonSRX avantDroit;
-    public WPI_TalonSRX avantGauche;
-    public WPI_TalonSRX arriereDroit;
-    public WPI_TalonSRX arriereGauche;
+    public CANSparkMax avantDroit;
+    public CANSparkMax avantGauche;
+    public CANSparkMax arriereDroit;
+    public CANSparkMax arriereGauche;
 
     public DigitalInput capteurLigne;
     public ADXRS450_Gyro gyro;
@@ -28,17 +30,19 @@ public final class Drivetrain extends Subsystem {
 
     public Drivetrain() {
 
-        avantDroit = new WPI_TalonSRX(RobotMap.MOTEUR_AVANT_DROIT);
-        avantGauche = new WPI_TalonSRX(RobotMap.MOTEUR_AVANT_GAUCHE);
-        arriereDroit = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_DROIT);
-        arriereGauche = new WPI_TalonSRX(RobotMap.MOTEUR_ARRIERE_GAUCHE);
+        avantDroit = new CANSparkMax(RobotMap.MOTEUR_AVANT_DROIT, MotorType.kBrushless);
+        avantGauche = new CANSparkMax(RobotMap.MOTEUR_AVANT_GAUCHE, MotorType.kBrushless);
+        arriereDroit = new CANSparkMax(RobotMap.MOTEUR_ARRIERE_DROIT, MotorType.kBrushless);
+        arriereGauche = new CANSparkMax(RobotMap.MOTEUR_ARRIERE_GAUCHE, MotorType.kBrushless);
+
+        avantDroit.setIdleMode(IdleMode.kBrake);
+        avantGauche.setIdleMode(IdleMode.kBrake);
+        arriereDroit.setIdleMode(IdleMode.kBrake);
+        arriereGauche.setIdleMode(IdleMode.kBrake);
+
+        setAllCurrentLimit(35, 20);
 
         moteurArriere = new VictorSP(RobotMap.MOTEUR_GRIMPEUR_ARRIERE);
-
-        avantDroit.configClosedloopRamp(.1);
-        avantGauche.configClosedloopRamp(.1);
-        arriereDroit.configClosedloopRamp(.1);
-        arriereGauche.configClosedloopRamp(.1);
 
 
         gyro = new ADXRS450_Gyro(Port.kOnboardCS2);
@@ -55,6 +59,13 @@ public final class Drivetrain extends Subsystem {
             mecanumDrive.driveCartesian(axeX, axeY, axeZ);
         }
         
+    }
+
+    public void setAllCurrentLimit(int stall, int free){
+        avantDroit.setSmartCurrentLimit(35,20);
+        avantGauche.setSmartCurrentLimit(35,20);
+        arriereDroit.setSmartCurrentLimit(35,20);
+        arriereGauche.setSmartCurrentLimit(35,20);
     }
 
     public double getGyroAngle(){
@@ -93,7 +104,7 @@ public final class Drivetrain extends Subsystem {
     }
 
     public void moteurGrimpeurSetVitesse(double vitesse){
-        moteurArriere.set(vitesse);
+        moteurArriere.set( vitesse);
       }
 
     @Override

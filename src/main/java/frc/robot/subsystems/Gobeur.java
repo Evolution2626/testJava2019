@@ -1,6 +1,8 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.VictorSP;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.GOBEUR_ACTIONS;
@@ -8,12 +10,12 @@ import frc.robot.RobotMap.GOBEUR_ACTIONS;
 
 public final class Gobeur extends Subsystem {
 
-    public VictorSP gobeurDroite;
-    public VictorSP gobeurGauche;
+    public VictorSPX gobeurDroite;
+    public VictorSPX gobeurGauche;
     
     public Gobeur(){
-        gobeurGauche = new VictorSP(RobotMap.MOTEUR_GOBEUR_GAUCHE);
-        gobeurDroite = new VictorSP(RobotMap.MOTEUR_GOBEUR_DROITE);
+        gobeurGauche = new VictorSPX(RobotMap.MOTEUR_GOBEUR_GAUCHE);
+        gobeurDroite = new VictorSPX(RobotMap.MOTEUR_GOBEUR_DROITE);
        
 
         gobeurDroite.setInverted(true);
@@ -21,8 +23,8 @@ public final class Gobeur extends Subsystem {
     }
 
     public void setMoteurs(double vitesse){
-        gobeurGauche.set(vitesse);
-        gobeurDroite.set(vitesse);
+        gobeurGauche.set(ControlMode.PercentOutput, vitesse);
+        gobeurDroite.set(ControlMode.PercentOutput, vitesse);
         
     }
 
