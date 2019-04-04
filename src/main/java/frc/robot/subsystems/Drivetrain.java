@@ -104,7 +104,7 @@ public final class Drivetrain extends Subsystem {
     }
 
     public void moteurGrimpeurSetVitesse(double vitesse){
-        moteurArriere.set( vitesse);
+        moteurArriere.set(vitesse);
       }
 
     @Override
