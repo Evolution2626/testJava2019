@@ -22,7 +22,7 @@ public final class Echelle extends Subsystem{
     public int etage = 0;
     public int positionAAtteindre = 0;
 
-    public int hauteurDuSolHatch = (int) (12.5 * 656.5); // le premier chiffre de la multiplication est la hauteur en pouces du crochet du sol lorsqu'il est descendu
+    public int hauteurDuSolHatch = (int) (14 * 656.5); // le premier chiffre de la multiplication est la hauteur en pouces du crochet du sol lorsqu'il est descendu
     public int hauteurDuSolBallon = (int) (6.5 * 656.5); // le premier chiffre de la multiplication est la hauteur en pouces du gobeur du sol lorsqu'il est descendu
 
 
