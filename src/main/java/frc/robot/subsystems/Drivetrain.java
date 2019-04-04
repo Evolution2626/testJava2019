@@ -47,9 +47,9 @@ public final class Drivetrain extends Subsystem {
         arriereDroit.setClosedLoopRampRate(.1);
         arriereGauche.setClosedLoopRampRate(.1);
 
-        avantDroit.setInverted(true);
+        avantDroit.setInverted(false);
         avantGauche.setInverted(false);
-        arriereDroit.setInverted(true);
+        arriereDroit.setInverted(false);
         arriereGauche.setInverted(false);
 
         setAllCurrentLimit(35, 20);
