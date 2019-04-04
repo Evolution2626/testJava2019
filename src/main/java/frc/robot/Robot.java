@@ -135,7 +135,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
-    Vision.tapeMode();
+    Vision.driveMode();
     grimpeur.setBothPosition(Value.kReverse);
   }
 
