@@ -1,5 +1,7 @@
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.RobotState;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
@@ -20,7 +22,7 @@ public class DrivetrainDriveCommand extends Command{
 
         Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), axeZ, true);
 
-        if (true) Robot.drivetrain.moteurGrimpeurSetVitesse(axeY);
+        if (Timer.getMatchTime() <= 45 && RobotState.isOperatorControl()) Robot.drivetrain.moteurGrimpeurSetVitesse(axeY);
     }
 
     @Override
