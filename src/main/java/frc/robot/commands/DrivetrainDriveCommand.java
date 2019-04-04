@@ -20,7 +20,7 @@ public class DrivetrainDriveCommand extends Command{
         double axeY = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, -Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_GAUCHE_Y));
         double axeZ = Range.threshold(RobotMap.THRESHOLD_DRIVETRAIN, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXE_DROITE_X));
 
-        Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), axeZ, true);
+        Robot.drivetrain.mecDrive(Speed.ramp(axeX), Speed.ramp(axeY), Speed.ramp(axeZ), true);
 
         if ((Timer.getMatchTime() <= 45 && RobotState.isOperatorControl()) || Robot.drivetrain.bypassMoteurGrimpeur) Robot.drivetrain.moteurGrimpeurSetVitesse(axeY);
     }
