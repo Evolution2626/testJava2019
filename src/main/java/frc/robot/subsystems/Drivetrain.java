@@ -52,13 +52,14 @@ public final class Drivetrain extends Subsystem {
         arriereDroit.setInverted(false);
         arriereGauche.setInverted(false);
 
-        setAllCurrentLimit(35, 20);
+        setAllCurrentLimit(55, 20);
 
         moteurArriere = new VictorSP(RobotMap.MOTEUR_GRIMPEUR_ARRIERE);
 
 
         gyro = new ADXRS450_Gyro(Port.kOnboardCS2);
 
+        
         mecanumDrive = new MecanumDrive(avantGauche, arriereGauche, avantDroit, arriereDroit);
 
         capteurLigne = new DigitalInput(RobotMap.CAPTEUR_LIGNE);
@@ -74,10 +75,10 @@ public final class Drivetrain extends Subsystem {
     }
 
     public void setAllCurrentLimit(int stall, int free){
-        avantDroit.setSmartCurrentLimit(35,20);
-        avantGauche.setSmartCurrentLimit(35,20);
-        arriereDroit.setSmartCurrentLimit(35,20);
-        arriereGauche.setSmartCurrentLimit(35,20);
+        avantDroit.setSmartCurrentLimit(stall,free);
+        avantGauche.setSmartCurrentLimit(stall,free);
+        arriereDroit.setSmartCurrentLimit(stall,free);
+        arriereGauche.setSmartCurrentLimit(stall,free);
     }
 
     public double getGyroAngle(){

@@ -37,7 +37,7 @@ public class Grimpeur extends Subsystem {
 
     if (valeur == Value.kForward) {
       Robot.drivetrain.resetGyroAngle();
-      Robot.drivetrain.setAllCurrentLimit(45, 40);
+      Robot.drivetrain.setAllCurrentLimit(80, 20);
       Robot.drivetrain.bypassMoteurGrimpeur = true;
     }
 

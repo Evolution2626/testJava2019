@@ -37,8 +37,8 @@ public class RobotMap{
 
     public static final int BOUTON_RESET_GYRO = 2;
 
-    public static final int BOUTON_GRIMPEUR_AVANT = 6;
-    public static final int BOUTON_GRIMPEUR_ARRIERE = 5;
+    public static final int BOUTON_GRIMPEUR_AVANT = 5;
+    public static final int BOUTON_GRIMPEUR_ARRIERE = 6;
 
     public static final int BOUTON_ALIGNER_TAPE_VISION = 4;
 
