@@ -56,16 +56,10 @@ public final class Gobeur extends Subsystem {
     }
 
     public void switchPistonPosition(){
-        switch (pistonGobeur.get()) {
-            case kReverse:
-                pistonGobeur.set(Value.kForward);
-                break;
-            case kForward:
-                pistonGobeur.set(Value.kReverse);
-                break;
-            default:
-                pistonGobeur.set(Value.kReverse);
-                break;
+        if (pistonGobeur.get() == Value.kReverse){
+            pistonGobeur.set(Value.kForward);
+        }else{
+            pistonGobeur.set(Value.kReverse);
         }
     }
 
