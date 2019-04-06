@@ -61,6 +61,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto choices", m_chooser);
 
     grimpeur.setBothPosition(Value.kReverse);
+    gobeur.setPiston(Value.kReverse);
   }
 
   /**
@@ -137,6 +138,7 @@ public class Robot extends TimedRobot {
   public void teleopInit() {
     Vision.driveMode();
     grimpeur.setBothPosition(Value.kReverse);
+    gobeur.setPiston(Value.kReverse);
   }
 
   /**
@@ -151,6 +153,7 @@ public class Robot extends TimedRobot {
   @Override
   public void testInit() {
     grimpeur.setBothPosition(Value.kReverse);
+    gobeur.setPiston(Value.kReverse);
     compresseur.start();
   }
 

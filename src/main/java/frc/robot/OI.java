@@ -7,6 +7,7 @@ import frc.robot.commands.DrivetrainResetGyroCommand;
 import frc.robot.commands.EchelleDeplacerEncodeur;
 import frc.robot.commands.EchelleEtageSetCommand;
 import frc.robot.commands.GobeurSetModeCommand;
+import frc.robot.commands.GobeurSortirPistonCommand;
 import frc.robot.commands.GrimpeurSetCommand;
 import frc.robot.subsystems.Grimpeur.Position;
 import frc.util.Gamepad;
@@ -22,6 +23,8 @@ public class OI {
 
         gamepadCoDriver.getBtn(RobotMap.BOUTON_DEGOBER).whenPressed(new GobeurSetModeCommand(GOBEUR_ACTIONS.DEGOBER));
         gamepadCoDriver.getBtn(RobotMap.BOUTON_DEGOBER).whenReleased(new GobeurSetModeCommand(GOBEUR_ACTIONS.STOP));
+
+        gamepadCoDriver.getBtn(RobotMap.BOUTON_PISTON_GOBEUR).whenPressed(new GobeurSortirPistonCommand());
 
         gamepadCoDriver.getDpadUp().whenPressed(new EchelleEtageSetCommand(1));
         gamepadCoDriver.getDpadDown().whenPressed(new EchelleEtageSetCommand(-1));

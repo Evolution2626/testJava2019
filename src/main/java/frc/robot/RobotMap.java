@@ -42,6 +42,8 @@ public class RobotMap{
 
     public static final int BOUTON_ALIGNER_TAPE_VISION = 4;
 
+    public static final int BOUTON_PISTON_GOBEUR = 0;
+
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;
 
@@ -51,6 +53,10 @@ public class RobotMap{
 
     //Gobeur
     public enum GOBEUR_ACTIONS { GOBER, DEGOBER, STOP }
+
+    public static final int PISTON_GOBEUR_FORWARD = 4;
+    public static final int PISTON_GOBEUR_REVERSE = 5;
+
     
     //Grimpeur
     public static final int AVANT_FOWARD = 0;
