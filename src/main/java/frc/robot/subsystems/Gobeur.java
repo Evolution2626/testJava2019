@@ -55,6 +55,20 @@ public final class Gobeur extends Subsystem {
         pistonGobeur.set(valeur);
     }
 
+    public void switchPistonPosition(){
+        switch (pistonGobeur.get()) {
+            case kReverse:
+                pistonGobeur.set(Value.kForward);
+                break;
+            case kForward:
+                pistonGobeur.set(Value.kReverse);
+                break;
+            default:
+                pistonGobeur.set(Value.kReverse);
+                break;
+        }
+    }
+
     @Override
     protected void initDefaultCommand() {
     }

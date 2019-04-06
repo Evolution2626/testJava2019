@@ -42,7 +42,7 @@ public class RobotMap{
 
     public static final int BOUTON_ALIGNER_TAPE_VISION = 4;
 
-    public static final int BOUTON_PISTON_GOBEUR = 0;
+    public static final int BOUTON_PISTON_GOBEUR = 3;
 
     //Switch
     public static final int LIMIT_SWITCH_ECHELLE = 0;

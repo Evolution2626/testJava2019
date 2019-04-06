@@ -21,7 +21,7 @@ public class GobeurSortirPistonCommand extends InstantCommand {
   // Called once when the command executes
   @Override
   protected void initialize() {
-    Robot.gobeur.setPiston(Value.kForward);
+    Robot.gobeur.switchPistonPosition();
   }
 
 }
